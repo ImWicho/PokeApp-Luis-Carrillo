@@ -1,6 +1,5 @@
+@import '../../../../assets/css/colors';
 $height: 64px;
-$bgcolor: #f4ed20;
-$color: #000000;
 
 .single-row{
   height: $height;
@@ -14,6 +13,6 @@ $color: #000000;
 }
 
 .color{
-  background-color: $bgcolor;
-  color: $color;
+  background-color: $yellow;
+  color: $colorblack;
 }

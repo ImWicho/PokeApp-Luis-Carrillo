@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@import './palettes.scss';
+
+@include mat-core();
+
+$candy-app-primary: mat-palette($md-customyellow);
+$candy-app-accent:  mat-palette($md-customblue, A200, A100, A400);
+$candy-app-warn:    mat-palette($mat-red);
+
+$candy-app-theme: mat-dark-theme((
+  color: (
+    primary: $candy-app-primary,
+    accent: $candy-app-accent,
+    warn: $candy-app-warn,  
+  )
+));
+
+@include angular-material-theme($candy-app-theme);

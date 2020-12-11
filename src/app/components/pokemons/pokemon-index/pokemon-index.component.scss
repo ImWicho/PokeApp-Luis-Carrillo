@@ -1,0 +1,19 @@
+@import '../../../../assets/css/colors';
+
+.img-logo{
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+form{
+  width: 100%;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-wrapper{
+  padding-bottom: 0 !important;
+}
