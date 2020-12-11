@@ -1,0 +1,9 @@
+$bgcolor: #323232;
+$color: #FFFFFF;
+
+.bg{
+  background-color: $bgcolor;
+  color: $color;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+}

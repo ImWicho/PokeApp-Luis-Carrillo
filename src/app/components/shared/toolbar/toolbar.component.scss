@@ -1,0 +1,19 @@
+$height: 64px;
+$bgcolor: #f4ed20;
+$color: #000000;
+
+.single-row{
+  height: $height;
+  display: flex;
+  padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.color{
+  background-color: $bgcolor;
+  color: $color;
+}
