@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Pokemon } from 'src/app/models/pokemon';
+import { Pokemon, PokemonAPI } from 'src/app/models/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { environment } from 'src/environments/environment';
 
@@ -31,15 +31,7 @@ export class PokemonIndexComponent implements OnInit {
       this.poke = undefined;
       const stringPoke = this.form.get('pokemon')?.value;
       this.pokemonSvc.getPokemon(stringPoke).subscribe((data) => {
-        this.poke = {
-          id: data.id,
-          name: data.name,
-          ability: data.abilities[0].ability.name,
-          height: data.height,
-          weight: data.weight,
-          img: data.sprites.front_default,
-          type: data.types[0].type.name
-        };
+        this.setPokemon(data);
         this.loading = false;
         this.form.reset();
       }, error => {
@@ -47,6 +39,18 @@ export class PokemonIndexComponent implements OnInit {
       this.error = true;
       });
     }
+  }
+
+  setPokemon(data: PokemonAPI): void{
+    this.poke = {
+      id: data.id,
+      name: data.name,
+      ability: data.abilities[0].ability.name,
+      height: data.height,
+      weight: data.weight,
+      img: data.sprites.front_default,
+      type: data.types[0].type.name
+    };
   }
 
 }
