@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { RouterModule } from '@angular/router';
+import { UniversalModule } from 'src/app/modules/universal.module';
 
 
 
@@ -9,7 +10,8 @@ import { RouterModule } from '@angular/router';
     ToolbarComponent
   ],
   imports: [
-    RouterModule
+    RouterModule,
+    UniversalModule
   ],
   exports: [
     ToolbarComponent
