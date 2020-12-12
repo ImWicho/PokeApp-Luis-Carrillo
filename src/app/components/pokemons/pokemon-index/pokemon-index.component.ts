@@ -41,6 +41,7 @@ export class PokemonIndexComponent implements OnInit {
           type: data.types[0].type.name
         };
         this.loading = false;
+        this.form.reset();
       }, error => {
       this.loading = false;
       this.error = true;

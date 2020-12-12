@@ -14,4 +14,12 @@
       <p class="info-poke">Tipo: {{ pokemon ? pokemon.type : '' }}</p>
     </div>
   </div>
+  <div class="row center-xs m-t m-b">
+    <div class="col-xs-12">
+      <button mat-raised-button color="primary"
+      type="button"
+      (click)="check ? removePokemon(pokemon) : addPokemon(pokemon)">
+      <mat-icon>add</mat-icon>{{ check ? 'Remover de favoritos' : 'Añadir a favoritos' }}</button>
+    </div>
+  </div>
 </div>
