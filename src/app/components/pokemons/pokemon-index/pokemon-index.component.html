@@ -1,20 +1,35 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 center-xs">
-      <img src="assets/img/logo.svg" class="img-logo" alt="">
+      <img [src]="urlLogo" class="img-logo" alt="">
     </div>
   </div>
-    <form [formGroup]="form">
-      <div class="row center-xs middle-xs">
-        <div class="col-xs-3">
-          <mat-form-field appearance="outline">
-            <mat-label>Nombre o ID del Pokémon</mat-label>
-            <input matInput placeholder="Buscar Pokémon..." formControlName="pokemon">
-          </mat-form-field>
-        </div>
-        <div class="col-xs-1">
-          <button mat-raised-button color="primary" [disabled]="form.invalid"><mat-icon>search</mat-icon> Buscar</button>
-        </div>
+  <form [formGroup]="form" (ngSubmit)="onSearchPokemon()">
+    <div class="row center-xs middle-xs">
+      <div class="col-xs-10 col-md-3">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre o ID del Pokémon</mat-label>
+          <input matInput placeholder="Buscar Pokémon..." formControlName="pokemon">
+        </mat-form-field>
       </div>
-    </form>
+      <div class="col-xs-12 col-md-1">
+        <button mat-raised-button color="primary"
+        type="button"
+        [disabled]="form.invalid || loading"
+        [class.spinner]="loading"
+        (click)="onSearchPokemon()"><mat-icon>search</mat-icon> Buscar</button>
+      </div>
+    </div>
+  </form>
+  <div class="row center-xs detail" *ngIf="poke">
+    <div class="col-xs-10 col-md-3">
+      <app-pokemon-detail [pokemon]="poke"></app-pokemon-detail>
+    </div>
+  </div>
+  <div class="row center-xs detail" *ngIf="error">
+    <div class="col-xs-12">
+      No se encontró el Pokémon
+    </div>
+  </div>
+  
 </div>

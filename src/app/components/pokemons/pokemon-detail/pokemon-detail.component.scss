@@ -1,0 +1,19 @@
+@import '../../../../assets/css/colors';
+
+.card{
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  border: 5px dotted $yellow;
+}
+
+.img-poke{
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+}
+
+.info-poke{
+  font-size: 16px;
+  font-weight: 500;
+}

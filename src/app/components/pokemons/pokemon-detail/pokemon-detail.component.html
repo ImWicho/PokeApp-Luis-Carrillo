@@ -1,1 +1,17 @@
-<p>pokemon-detail works!</p>
+<div class="card">
+  <div class="row">
+    <div class="col-xs-12">
+      <img [src]="pokemon.img" class="img-poke" alt="" srcset="">
+    </div>
+  </div>
+  <div class="row center-xs">
+    <div class="col-xs-6">
+      <p class="info-poke">ID: {{ pokemon ? pokemon.id : '' }}</p>
+      <p class="info-poke">Nombre: {{ pokemon ? pokemon.name : '' }}</p>
+      <p class="info-poke">Altura: {{ pokemon ? pokemon.height : '' }}</p>
+      <p class="info-poke">Peso: {{ pokemon ? pokemon.weight : '' }}</p>
+      <p class="info-poke">Habilidad: {{  pokemon ? pokemon.ability : '' }}</p>
+      <p class="info-poke">Tipo: {{ pokemon ? pokemon.type : '' }}</p>
+    </div>
+  </div>
+</div>
